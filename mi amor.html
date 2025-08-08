@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Botón de Corazón con Mensajes</title>
+  <style>
+    body {
+      background-color: #FFF4DF; /* Fondo crema claro */
+      color: #FF7B00; /* Texto naranja fuerte */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #heartButton {
+      font-size: 4rem;
+      cursor: pointer;
+      background-color: #FF8D21; /* Naranja medio */
+      border: none;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      color: white;
+      box-shadow: 0 4px 8px rgba(255, 139, 33, 0.5);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    #heartButton:hover {
+      background-color: #FFA652;
+      transform: scale(1.2);
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #FFB76B;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 6px rgba(255, 183, 107, 0.6);
+      max-width: 90%;
+      text-align: center;
+      color: #FFF4DF;
+      min-height: 60px; /* para que el contenedor no cambie de tamaño */
+    }
+  </style>
+</head>
+<body>
+
+  <button id="heartButton" aria-label="Botón de corazón">🤍</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "Estoy enamorado de ti, mi Val.",
+      "Eres el oxígeno que respiro, mi amor.",
+      "No sabes cuánto te amo.",
+      "Eres tan perfecto.",
+      "Pinche pitudo, te amo.",
+      "Me encantas.",
+      "Me fascinas.",
+      "Tu sonrisa es lo más bello de la tierra.",
+      "Nunca te cambiaría por nada, mi vida.",
+      "Eres mi razón de ser.",
+      "Contigo todo es perfecto.",
+      "Eres mi hogar.",
+      "Te amo eternamente.",
+      "Eres el amor de mi vida.",
+      "Eres tan guapo.",
+      "Amo besarte.",
+      "Mi macho.",
+      "Me muero por ti.",
+      "Eres el amor de mi vida."
+    ];
+
+    let index = 0;
+
+    const heartButton = document.getElementById('heartButton');
+    const messageDiv = document.getElementById('message');
+
+    heartButton.addEventListener('click', () => {
+      messageDiv.textContent = messages[index];
+      index = (index + 1) % messages.length; // ciclo de mensajes
+    });
+  </script>
+
+</body>
+</html>
